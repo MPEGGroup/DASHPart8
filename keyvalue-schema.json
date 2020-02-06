@@ -1,0 +1,110 @@
+{
+    "$id": "https://github.com/MPEGGroup/DASHPart8/keyvalue-schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "The schema for the array of keyvalue objects, as defined in ISO/IEC 23009-8 Session based DASH operations",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": ["keyList"],
+        "oneOf": [
+            {"required": ["timeline"]},
+            {"required": ["orderline"]}
+        ],
+        "properties": {
+            "keyList": {
+                "type": "array",
+                "item": "string"
+            },
+            "comment": {"type": "string"},
+            "timescale": {
+                "type": "integer",
+                "minimum": 0,
+                "default" : 1
+            },
+            "type": {
+                "type": "string",
+                "enum": ["static", "dynamic"],
+                "default" : "static"
+            },
+            "startTime": {
+                "type": "integer",
+                "minimum": 0
+            },
+            "duration": {
+                "type": "integer",
+                "minimum": 0
+            },
+            "loop": {
+                "type": "boolean",
+                "default" : "false"
+            },
+            "timeline": {
+                "type": "array",
+                "item": {
+                    "type": "object",
+                    "required" : ["v"],
+                    "properties": {
+                        "v": {
+                            "type": "array",
+                            "item": "string"
+                        },
+                        "s": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "n": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "r": {
+                            "type": "integer",
+                            "minimum": -1,
+                            "default" : 0
+                        },
+                        "d": {
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    }
+                }
+            },
+            "orderline": {
+                "type": "array",
+                "item": {
+                    "type": "object",
+                    "required" : ["v"],
+                    "properties": {
+                        "v": {
+                            "type": "array",
+                            "item": "string"
+                        },
+                        "s": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "n": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "r": {
+                            "type": "integer",
+                            "minimum": -1,
+                            "default" : 0
+                        }
+                    }
+                }
+            }  
+        },
+        "if": {
+            "properties": {"type": {"const": "dynamic"}}
+        },
+        "then": {
+            "properties":{
+                "ttl": {
+                    "type": "integer",
+                    "minimum": 0  
+                }
+            }
+        }
+    }
+}
