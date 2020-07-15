@@ -1,0 +1,12 @@
+<!—Descriptor schema -->
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+   xmlns:sbd="urn:mpeg:dash:sbd:2020" targetNamespace="urn:mpeg:dash:sbd:2020" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- Key -->
+    <xs:complexType name="Key">
+        <xs:attribute name="name" type="xs:Name"/>
+        <xs:attribute name="defaultValue" type="StringNoWhitespaceType"/>
+        <xs:anyAttribute namespace="##other" processContents="lax"/>
+    </xs:complexType>
+    <xs:attribute name="template" type="StringNoWhitespaceType"/>
+</xs:schema>

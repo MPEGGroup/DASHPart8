@@ -1,0 +1,13 @@
+<AdaptationSet
+     mimeType="video/mp4" segmentAlignment="true" startWithSAP="1"  
+     maxWidth="1280" maxHeight="720" maxFrameRate="24000/1001" par="16:9">  
+ <EssentialProperty schemeIdUri=" urn:mpeg:dash:sbd:2020" 
+     value=" http://example.com/variant_sequence.json?client_id=ctulhu"
+     xmlns:sbd="urn:mpeg:dash:sbd:2020"
+     sbd:template=”&v=$variant$” >
+        <sbd:Key name=”variant” defaultValue=”nil”/>  
+  </EssentialProperty>
+  <SegmentTemplate duration="2" startNumber="1" media="video/$RepresentationID$_$Number%05d$.mp4">
+  <Representation id="720p" codecs="avc3.4d401f" width="1280" height="720" frameRate="24000/1001" sar="1:1" bandwidth="3000000"/>
+  <Representation id="360p" codecs="avc3.4d401f" width="640" height="360" frameRate="24000/1001" sar="1:1" bandwidth="1500000"/>
+</AdaptationSet>
