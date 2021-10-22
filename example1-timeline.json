@@ -1,13 +1,12 @@
 {
     "KeyValue": [ 
         {
-            "keylist": ["value"], 
+            "keylist": ["p1", "subdomain."], 
             "comment": "A/B sequence document for user Ctulhu",
             "timeline": [
-                { "s": "0", "d": "1",  "v": ["d4baa823-8ff2-445b-847b-d6ead52cf6ce"]}, 
-                {"d": "3", "v": ["861d34d7-56eb-4893-a7b7-60edabebe3e6"]},
-                {"d": "2", "v": ["d8a56fd3-6c21-44be-94f8-a519cd6b4169"]},
-                {"d": "1", "v": ["75b49311-008c-4272-9aff-b855ee94707a"]}
+                { "s": "0", "d": "3", "v": ["861d34d7-56eb-4893-a7b7-60edabebe3e6", "s1."]},
+                {"d": "2", "v": ["d8a56fd3-6c21-44be-94f8-a519cd6b4169", "s2."]},
+                {"d": "1", "v": ["75b49311-008c-4272-9aff-b855ee94707a", "s3."]}
             ]
         }
     ]

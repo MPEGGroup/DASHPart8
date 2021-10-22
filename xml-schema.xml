@@ -8,5 +8,31 @@
         <xs:attribute name="defaultValue" type="StringNoWhitespaceType"/>
         <xs:anyAttribute namespace="##other" processContents="lax"/>
     </xs:complexType>
+    <!-- Host -->
+    <xs:complexType name="Host">
+        <xs:attribute name="name" type="xs:Name"/>
+        <xs:attribute name="default" type="StringNoWhitespaceType"/>
+        <xs:anyAttribute namespace="##other" processContents="lax"/>
+    </xs:complexType>
+    <!-- Path -->
+    <xs:complexType name="Path">
+        <xs:attribute name="name" type="xs:Name"/>
+        <xs:attribute name="default" type="StringNoWhitespaceType"/>
+        <xs:anyAttribute namespace="##other" processContents="lax"/>
+    </xs:complexType>
+    <!-- Port -->
+    <xs:complexType name="Port">
+        <xs:attribute name="name" type="xs:Name"/>
+        <xs:attribute name="default" type="StringNoWhitespaceType"/>
+        <xs:anyAttribute namespace="##other" processContents="lax"/>
+    </xs:complexType>
+    <xs:attribute name="urlClass" type="xs:string"/>
     <xs:attribute name="template" type="StringNoWhitespaceType"/>
+    <xs:attribute name="hostTemplate" type="StringNoWhitespaceType"/>
+    <xs:attribute name="pathTemplate" type="StringNoWhitespaceType"/>
+    <xs:attribute name="portTemplate" type="StringNoWhitespaceType"/>
+    <xs:attribute name="urlMatch" type=" xs:boolean"/>
+    <xs:attribute name="hostMatch" type=" xs:boolean"/>
+    <xs:attribute name="pathMatch" type=" xs:boolean"/>
+    <xs:attribute name="postMatch" type=" xs:boolean"/>
 </xs:schema>
